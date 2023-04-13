@@ -4,9 +4,6 @@ from tkinter.constants import SUNKEN
 
 window = tk.Tk()
 window.title('Calculator')
-hello = tk.Label(text='hhellohelloghelloghelloehlloehgllleoello')
-hello.pack()
-
 frame = tk.Frame(master=window, bg="skyblue", padx=10)
 frame.pack()
 entry = tk.Entry(master=frame, relief=SUNKEN, borderwidth=3, width=30)
