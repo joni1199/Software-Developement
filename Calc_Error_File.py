@@ -2,16 +2,6 @@ import tkinter as tk
 import tkinter.messagebox
 from tkinter.constants import SUNKEN
 
-window = tk.Tk()
-window.title('Calculator')
-hello = tk.Label(text='hhellohelloghelloghelloehlloehgllleoello')
-hello.pack()
-
-frame = tk.Frame(master=window, bg="skyblue", padx=10)
-frame.pack()
-entry = tk.Entry(master=frame, relief=SUNKEN, borderwidth=3, width=30)
-entry.grid(row=0, column=0, columnspan=3, ipady=2, pady=2)
-
 
 def myclick(number):
     entry.insert(tk.END, number)
@@ -30,8 +20,16 @@ def clear():
     entry.delete(0, tk.END)
 
 
+window = tk.Tk()
+
+window.title('Calculator')
+frame = tk.Frame(master=window, bg="lightgreen", padx=10)
+
+entry = tk.Entry(master=frame, relief=SUNKEN, borderwidth=3, width=30)
+entry.grid(row=0, column=0, columnspan=3, ipady=2, pady=2)
+
 button_1 = tk.Button(master=frame, text='1', padx=15, pady=5, width=3, command=lambda: myclick(1))
-button_1.grid(row=1, column=0, pady=2)
+button_1.grid(row=1, column=0, pady=2,)
 button_2 = tk.Button(master=frame, text='2', padx=15, pady=5, width=3, command=lambda: myclick(2))
 button_2.grid(row=1, column=1, pady=2)
 button_3 = tk.Button(master=frame, text='3', padx=15, pady=5, width=3, command=lambda: myclick(3))
@@ -69,5 +67,6 @@ button_clear.grid(row=6, column=1, columnspan=2, pady=2)
 button_equal = tk.Button(master=frame, text="=", padx=15, pady=5, width=9, command=equal)
 button_equal.grid(row=7, column=0, columnspan=3, pady=2)
 
-window.mainloop()
+frame.pack(fill=tk.BOTH, side=tk.LEFT, expand=True)
 
+window.mainloop()
